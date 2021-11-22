@@ -1,0 +1,11 @@
+mixin animated-close-button(data)
+	- data = data || {}
+	- data.class = data.class || ''
+	- data.content = data.content || 'Gulp Front'
+
+	button.animated-close-button(class=data.class, role="button", type="button")&attributes(attributes)
+		span.text=data.content
+		.icons
+			.cross
+			.check
+

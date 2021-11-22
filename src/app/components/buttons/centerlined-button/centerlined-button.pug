@@ -1,0 +1,11 @@
+mixin centerlined-button(data)
+	- data = data || {}
+	- data.class = data.class || ''
+	- data.href = data.href || 'javascript:void(0)'
+	- data.content = data.content || 'Gulp Front'
+
+	a.centerlined-button(class=data.class, title=data.content, href=data.href)&attributes(attributes)
+		if block
+			block
+		else
+			!= data.content

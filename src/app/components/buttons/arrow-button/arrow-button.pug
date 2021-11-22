@@ -1,0 +1,11 @@
+mixin arrow-button(data)
+	- data = data || {}
+	- data.class = data.class || ''
+	- data.content = data.content || 'Gulp Front'
+
+	button.arrow-button(class=data.class, role="button", type="button")&attributes(attributes)
+		if block
+			block
+		else
+			!= data.content
+			span.arrow

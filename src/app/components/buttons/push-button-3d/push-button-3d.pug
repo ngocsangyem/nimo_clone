@@ -1,0 +1,10 @@
+mixin push-button-3d(data)
+	- data = data || {}
+	- data.class = data.class || ''
+	- data.content = data.content || 'Gulp Front'
+
+	button.push-button-3d(class=data.class, role="button", type="button")&attributes(attributes)
+		if block
+			block
+		else
+			!= data.content

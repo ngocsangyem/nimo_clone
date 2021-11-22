@@ -1,0 +1,10 @@
+mixin rotating-cuboid-button(data)
+	- data = data || {}
+	- data.class = data.class || ''
+	- data.content = data.content || {front: 'Gulp', back: 'Front'}
+
+	button.rotating-cuboid-button(class=data.class, role="button", type="button")&attributes(attributes)
+		.face.face-front
+			span=data.content.front
+		.face.face-back
+			span=data.content.back

@@ -1,0 +1,11 @@
+@use "@/styles/styles";
+
+@import '@/components/modals/flip-modal/flip-modal';
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 100vh;
+}

@@ -1,0 +1,10 @@
+mixin rotating-3d-button(data)
+	- data = data || {}
+	- data.class = data.class || ''
+	- data.content = data.content || 'Gulp Front'
+
+	button.rotating-3d-button(class=data.class, role="button", type="button")&attributes(attributes)
+		if block
+			block
+		else
+			!= data.content

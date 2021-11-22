@@ -1,0 +1,10 @@
+mixin angled-gradient-button(data)
+	- data = data || {}
+	- data.class = data.class || ''
+	- data.content = data.content || 'Gulp Front'
+
+	button.angled-gradient-button(class=data.class, role="button", type="button")&attributes(attributes)
+		if block
+			block
+		else
+			!= data.content

@@ -1,0 +1,10 @@
+mixin borderman-button(data)
+	- data = data || {}
+	- data.class = data.class || ''
+	- data.content = data.content || 'Some content here'
+
+	button.borderman-button.btn-border(class=data.class, role="button", type="button")&attributes(attributes)
+		if block
+			block
+		else
+			!= data.content

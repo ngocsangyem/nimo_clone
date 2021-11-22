@@ -1,0 +1,10 @@
+mixin suduko-button(data)
+	- data = data || {}
+	- data.class = data.class || ''
+	- data.content = data.content || 'Front-end'
+
+	button.suduko-button(class=data.class, role="button", type="button")&attributes(attributes)
+		if block
+			block
+		else
+			!= data.content

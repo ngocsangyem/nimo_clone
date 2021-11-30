@@ -1,3 +1,5 @@
+import { createPopper } from '@popperjs/core';
+
 const settingPanel = document.querySelector('.setting-panel');
 const panelList = settingPanel?.querySelector('.panel-list');
 const settingPanelBtn = document.querySelector('.header-btn-setting');
@@ -5,6 +7,7 @@ const panelContentItems = document.querySelectorAll(
 	'.panel-content .panel-content-item[data-panel]'
 );
 const settingMask = document.querySelector('.setting-mask');
+const submenus = document.querySelectorAll('.has-submenu');
 
 const toggleSettingPanel = () => {
 	const handleToggle = () => {
@@ -14,9 +17,9 @@ const toggleSettingPanel = () => {
 		Array.from(panelContentItems).forEach((panel) =>
 			panel?.classList.remove('is-active')
 		);
-	}
+	};
 	settingPanelBtn?.addEventListener('click', handleToggle);
-	settingMask?.addEventListener('click', handleToggle)
+	settingMask?.addEventListener('click', handleToggle);
 };
 
 const closePanelList = () => {
@@ -29,6 +32,65 @@ const togglePanelList = () => {
 	if (panelList?.classList.contains('is-hidden')) {
 		panelList?.classList.remove('is-hidden');
 	}
+};
+
+const handleSubmenu = () => {
+	Array.from(submenus).forEach((submenu) => {
+		const submenuContent = <HTMLElement>submenu.querySelector('.submenu');
+		const popperInstance = createPopper(submenu, submenuContent, {
+			modifiers: [
+				{
+					name: 'offset',
+					options: {
+						offset: [0, 8],
+					},
+				},
+			],
+			placement: 'bottom',
+			strategy: 'fixed',
+		});
+
+		function show() {
+			// Make the tooltip visible
+			submenuContent.setAttribute('data-show', '');
+	
+			popperInstance.setOptions((options) => ({
+				...options,
+				modifiers: [
+					...options.modifiers,
+					{ name: 'eventListeners', enabled: true },
+				],
+			}))
+	
+			// Update its position
+			popperInstance.update();
+		}
+
+		function hide() {
+			// Hide the tooltip
+			submenuContent.removeAttribute('data-show');
+	
+			// Disable the event listeners
+			popperInstance.setOptions((options) => ({
+				...options,
+				modifiers: [
+				...options.modifiers,
+				{ name: 'eventListeners', enabled: false },
+				],
+			}));
+		}
+
+		const showEvents = ['mouseenter', 'focus'];
+		const hideEvents = ['mouseleave', 'blur'];
+
+		showEvents.forEach((event) => {
+			submenu.addEventListener(event, show);
+		});
+
+		hideEvents.forEach((event) => {
+			submenu.addEventListener(event, hide);
+		});
+	});
 };
 
 const openPanelContent = () => {
@@ -53,6 +115,7 @@ const openPanelContent = () => {
 const Header = () => {
 	toggleSettingPanel();
 	openPanelContent();
+	handleSubmenu();
 };
 
 export { Header };

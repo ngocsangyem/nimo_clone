@@ -3,6 +3,54 @@ header.main-header
 		.main-header-inner
 			.header-logo
 				a.logo-link(href="/")
+			.header-navigation
+				nav
+					ul.flex.items-center
+						li.nav-item
+							a.nav-link.is-active(href="#", title="title") Home
+						li.nav-item
+							a.nav-link(href="#", title="title") Live
+						li.nav-item.has-submenu
+							a.nav-link.submenu-trigger(href="#", title="title")
+								| Category
+								svg.icon.icon-caret-down-fill(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+									path(d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z')
+							.submenu
+								h4.submenu-title Hot category
+								.submenu-inner
+									ul.grid.gap-xs
+										li.col-4
+											a(href="#", title="title" style="background-image: url('https://img.nimo.tv/o/banner/F40CB06A2937771F062763E7500C393_fb5b0c9e2de756d3b02bec317fb9f4d3.jpg/w240_l0/img.webp')")
+												.mask
+													span Ragnarok X: Next Generation 
+										li.col-4
+											a(href="#", title="title" style="background-image: url('https://img.nimo.tv/o/banner/F40CB06A2937771F062763E7500C393_fb5b0c9e2de756d3b02bec317fb9f4d3.jpg/w240_l0/img.webp')")
+												.mask
+													span Ragnarok X: Next Generation 
+										li.col-4
+											a(href="#", title="title" style="background-image: url('https://img.nimo.tv/o/banner/F40CB06A2937771F062763E7500C393_fb5b0c9e2de756d3b02bec317fb9f4d3.jpg/w240_l0/img.webp')")
+												.mask
+													span Ragnarok X: Next Generation 
+										li.col-4
+											a(href="#", title="title" style="background-image: url('https://img.nimo.tv/o/banner/F40CB06A2937771F062763E7500C393_fb5b0c9e2de756d3b02bec317fb9f4d3.jpg/w240_l0/img.webp')")
+												.mask
+													span Ragnarok X: Next Generation 
+										li.col-4
+											a(href="#", title="title" style="background-image: url('https://img.nimo.tv/o/banner/F40CB06A2937771F062763E7500C393_fb5b0c9e2de756d3b02bec317fb9f4d3.jpg/w240_l0/img.webp')")
+												.mask
+													span Ragnarok X: Next Generation 
+										li.col-4
+											a(href="#", title="title" style="background-image: url('https://img.nimo.tv/o/banner/F40CB06A2937771F062763E7500C393_fb5b0c9e2de756d3b02bec317fb9f4d3.jpg/w240_l0/img.webp')")
+												.mask
+													span Ragnarok X: Next Generation 
+									a.view-all-btn(href="#", title="title")
+										| View all
+										svg.icon.icon-chevron-right(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+											path(fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z')
+								.submenu-arrow
+
+						li.nav-item
+							a.nav-link(href="#", title="title") Esports
 			.header-search
 			.header-btn-group.flex-grow.flex-basis-0.min-width-0.justify-end
 				a.header-btn.header-btn-search(href="/search" title="Open search page")

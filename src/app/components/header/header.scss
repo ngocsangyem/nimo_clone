@@ -93,6 +93,10 @@
 			display: block;
 		}
 	}
+
+	.header-navigation {
+		display: none;
+	}
 }
 
 .header-setting {
@@ -407,6 +411,7 @@
 }
 
 @import './header-tablet.scss';
+@import './header-desktop.scss';
 
 @keyframes growIn {
 	0% {

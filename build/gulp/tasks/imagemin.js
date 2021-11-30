@@ -4,7 +4,7 @@ const pngquant = require('imagemin-pngquant');
 const { paths, plugins, isDev, colors, dirs } = require('../../utils');
 const { pipe } = require('../../core');
 
-const inputs = () => paths.assets(dirs.images, '*.{jpg,jpeg,gif,svg,png}');
+const inputs = () => paths.assets(dirs.images, '**', '*.{jpg,jpeg,gif,svg,png,webp}');
 
 const output = () => dest(paths.taskTarget(dirs.images));
 

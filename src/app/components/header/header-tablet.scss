@@ -1,0 +1,14 @@
+@use '@/styles/base'as *;
+
+@include breakpoint(sm) {
+	.main-header-inner {
+
+		.header-btn-login,
+		.header-btn-signup {
+			display: block;
+			width: 5rem;
+			text-align: center;
+			line-height: 1;
+		}
+	}
+}

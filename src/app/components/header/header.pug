@@ -1,2 +1,108 @@
-header
-	h1 This is header
+header.main-header
+	.container
+		.main-header-inner
+			.header-logo
+				a.logo-link(href="/")
+			.header-search
+			.header-btn-group.flex-grow.flex-basis-0.min-width-0.justify-end
+				a.header-btn.header-btn-search(href="/search" title="Open search page")
+					// https://icons.getbootstrap.com/
+					svg.icon.icon-search(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+						path(d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z')
+				a.header-btn.header-btn-recharge.border-primary.flex.items-center(href="#", title="Recharge button")
+					span.text-truncate Recharge
+				a.header-btn.header-btn-open-app.bg-primary.color-white.flex.items-center.justify-center(href="#", title="Open App button")
+					span Open App
+				a.header-btn.header-btn-login.bg-primary.color-white.flex.items-center.justify-center(href="#", title="Login button")
+					span Login
+				a.header-btn.header-btn-signup.bg-primary.color-white.flex.items-center.justify-center(href="#", title="Sign Up button")
+					span Sign Up
+				.header-setting
+					div(class="setting-mask position-fixed height-100% width-100%")
+					button.reset.header-btn.header-btn-setting.color-primary(href="#", aria-label="setting")
+						svg.icon.icon-three-dots(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+							path(d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z')
+					.setting-panel
+						.panel-list
+							button.reset.panel-item.panel-item-more(data-panel="language" type="button" aria-label="Language")
+								span Language
+								.more.flex.items-center
+									span English
+									svg.icon.icon-chevron-right(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+										path(fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z')
+							button.reset.panel-item.panel-item-more(data-panel="country" type="button" aria-label="country/region")
+								span country/region
+								.more.flex.items-center
+									span
+										picture
+											source(srcset='./images/VN_flag.webp' type='image/webp')
+											img(src='./images/VN_flag.webp' alt='VN')
+									svg.icon.icon-chevron-right(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+										path(fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z')
+							.panel-item.panel-item-more
+								span Dark mode
+								.more
+									.switch
+										input#switch-checkbox.switch-input(type='checkbox')
+										label.switch-label(for='switch-checkbox' aria-hidden='true') Option label
+										.switch-marker(aria-hidden='true')
+							a(href="#", title="login").panel-item
+								span Login
+							a(href="#", title="Sign Up").panel-item
+								span Sign Up
+							a(href="#", title="Privacy Policy").panel-item
+								span Privacy Policy
+							a(href="#", title="Cookie Policy").panel-item
+								span Cookie Policy
+							a(href="#", title="Open Platform").panel-item
+								span Open Platform
+						.panel-content
+							.panel-content-item.panel-content-language(data-panel="language")
+								header.panel-trigger.flex.items-center
+									svg.icon.icon-chevron-left(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+										path(fill-rule='evenodd' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z')
+									span Only change the language of website
+								.panel-content-list.overflow-auto
+									a(href="#", title="language 中文 繁體") 中文 繁體 
+									a(href="#", title="language English") English
+									a(href="#", title="language Bahasa Indonesia") Bahasa Indonesia
+									a(href="#", title="language Pilipinas") Pilipinas
+									a(href="#", title="language Việt Nam") Việt Nam
+									a(href="#", title="language ภาษาไทย") ภาษาไทย
+									a(href="#", title="language Malaysia") Malaysia
+									a(href="#", title="language Português") Português
+									a(href="#", title="language Español") Español
+									a(href="#", title="language हिन्दी") हिन्दी
+									a(href="#", title="language Türkçe") Türkçe
+									a(href="#", title="language العربية") العربية
+									a(href="#", title="language Русский") Русский
+									a(href="#", title="language 日本語") 日本語
+							.panel-content-item(data-panel="country")
+								header.panel-trigger.flex.items-center
+									svg.icon.icon-chevron-left(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+										path(fill-rule='evenodd' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z')
+									span Please select a country/region
+								.panel-country
+									.country-content.country-current
+										header.country-header My Position
+										.country-list.grid.gap-xs
+											button.text-truncate.col-6.reset.country-item(type="button" aria-label="Viet Nam") Viet Nam
+									.country-content.country-current
+										header.country-header Hot Area
+										.country-list.grid.gap-xs
+											button.text-truncate.col-6.reset.country-item(type="button" aria-label="Viet Nam")
+												span.country-icon
+													picture
+														source(srcset='./images/icon_hot.png' type='image/png')
+														img(src='./images/icon_hot.png' alt='icon')
+												| Global
+											button.text-truncate.col-6.reset.country-item(type="button" aria-label="Viet Nam") Viet Nam
+											button.is-active.text-truncate.col-6.reset.country-item(type="button" aria-label="Viet Nam") Indonesia
+											button.text-truncate.col-6.reset.country-item(type="button" aria-label="Viet Nam") Thailand
+											button.text-truncate.col-6.reset.country-item(type="button" aria-label="Viet Nam") Turkey
+											button.text-truncate.col-6.reset.country-item(type="button" aria-label="Viet Nam") More
+
+
+
+
+

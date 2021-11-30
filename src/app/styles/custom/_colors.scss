@@ -1,12 +1,13 @@
-@use '../base' as *;
+@use '../base'as *;
+
 :root,
 [data-theme="default"] {
 	// main
-	@include defineColorHSL(--color-primary-darker, 250, 84%, 38%);
-	@include defineColorHSL(--color-primary-dark, 250, 84%, 46%);
-	@include defineColorHSL(--color-primary, 250, 84%, 54%);
-	@include defineColorHSL(--color-primary-light, 250, 84%, 60%);
-	@include defineColorHSL(--color-primary-lighter, 250, 84%, 67%);
+	@include defineColorHSL(--color-primary-darker, 256, 93%, 37%);
+	@include defineColorHSL(--color-primary-dark, 256, 93%, 47%);
+	@include defineColorHSL(--color-primary, 256, 93%, 57%);
+	@include defineColorHSL(--color-primary-light, 256, 93%, 67%);
+	@include defineColorHSL(--color-primary-lighter, 256, 93%, 77%);
 
 	@include defineColorHSL(--color-accent-darker, 342, 89%, 38%);
 	@include defineColorHSL(--color-accent-dark, 342, 89%, 43%);
@@ -102,4 +103,16 @@
 		@include defineColorHSL(--color-contrast-high, 223, 8%, 82%);
 		@include defineColorHSL(--color-contrast-higher, 240, 100%, 99%);
 	}
+}
+
+.color-primary {
+	color: var(--color-primary);
+}
+
+.bg-primary {
+	background-color: alpha(var(--color-primary), var(--bg-o, 1));
+}
+
+.border-primary {
+	border-color: alpha(var(--color-primary), var(--bg-o, 1));
 }

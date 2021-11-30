@@ -14,8 +14,8 @@ html(dir='ltr', lang=SEO.seo_lang, itemscope, itemtype="http://schema.org/WebSit
 		meta(name='theme-color', content=SEO.mobile_color)
 		meta(name='msapplication-navbutton-color', content=SEO.mobile_color)
 		meta(name='apple-mobile-web-app-status-bar-style', content=SEO.mobile_color)
-		if process.argv.slice(3).indexOf('--production') > -1
-			include ./includes/_seo
+		//- if process.argv.slice(3).indexOf('--production') > -1
+		//- 	include ./includes/_seo
 		if process.argv.slice(3).indexOf('--production') > -1
 			include ./includes/_favicon
 		include ./includes/_css
@@ -23,6 +23,7 @@ html(dir='ltr', lang=SEO.seo_lang, itemscope, itemtype="http://schema.org/WebSit
 		title #{title} | #{SEO.cfg_name}
 	body(class=process.argv.slice(3).indexOf('--production') < 0 ? workName + 'develop '+prefix+bodyClass+'-page' : prefix+bodyClass+'-page' || 'default')
 		<!-- GFRONT:symbol -->
+		include @/components/header/header
 		main
 			block main
 		<!-- GFRONT:scripts -->

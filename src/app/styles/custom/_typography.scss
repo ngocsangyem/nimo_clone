@@ -2,10 +2,10 @@
 
 :root {
 	// font family
-	--font-primary: Inter, system-ui, sans-serif;
+	--font-primary: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
 
 	// font size
-	--text-base-size: 1rem; // body font-size
+	--text-base-size: 14px; // body font-size
 	--text-scale-ratio: 1.2; // multiplier used to generate the type scale values 👇
 
 	// line-height

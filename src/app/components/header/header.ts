@@ -34,6 +34,32 @@ const togglePanelList = () => {
 	}
 };
 
+const handleCountryOptionsDesktop = () => {
+	const triggerBtn = <Element>document.querySelector('.header-country-options .trigger-btn');
+	const optionsList = <HTMLElement>document.querySelector('.header-country-options .country-options');
+
+	const popperInstance = createPopper(triggerBtn, optionsList, {
+		modifiers: [
+			{
+				name: 'offset',
+				options: {
+					offset: [0, 15],
+				},
+			},
+		],
+		placement: 'bottom-end',
+		strategy: 'fixed',
+	});
+
+	triggerBtn.addEventListener('click', () => {
+		if (!optionsList.hasAttribute('show-popper')) {
+			optionsList.setAttribute('show-popper', '');
+		} else {
+			optionsList.removeAttribute('show-popper');
+		}
+	})
+}
+
 const handleSubmenu = () => {
 	Array.from(submenus).forEach((submenu) => {
 		const submenuContent = <HTMLElement>submenu.querySelector('.submenu');
@@ -116,6 +142,7 @@ const Header = () => {
 	toggleSettingPanel();
 	openPanelContent();
 	handleSubmenu();
+	handleCountryOptionsDesktop();
 };
 
 export { Header };

@@ -57,6 +57,10 @@
 		border-style: solid;
 		border-width: 0.043rem;
 		min-width: 1.87rem;
+
+		img {
+			display: none;
+		}
 	}
 
 	.header-btn-open-app {
@@ -94,7 +98,10 @@
 		}
 	}
 
-	.header-navigation {
+	.header-navigation,
+	.header-options,
+	.header-download,
+	.header-country-options {
 		display: none;
 	}
 }
@@ -112,7 +119,7 @@
 	box-sizing: border-box;
 	max-height: 80vh;
 	max-height: calc(100vh - 6.608rem - env(safe-area-inset-bottom));
-	overflow: auto;
+	// overflow: auto;
 	padding: 0.435rem 0 0.696rem;
 	position: absolute;
 	right: 0.435rem;
@@ -122,9 +129,14 @@
 	transform-origin: top right;
 	animation: growIn 10ms ease-in-out forwards;
 	font-size: 14px;
+	background-color: var(--color-white);
 
 	&.is-active {
 		animation: growOut 300ms ease-in-out forwards;
+	}
+
+	.popover-arrow {
+		display: none;
 	}
 }
 
@@ -159,6 +171,11 @@
 			--size: 14px;
 			margin-bottom: -1px;
 		}
+	}
+
+	.panel-item-add,
+	.panel-item-follow {
+		display: none;
 	}
 
 	&.is-hidden {
@@ -220,9 +237,10 @@
 	}
 }
 
-.panel-country {
+.country-options {
 	margin: 8px 12px;
 	width: 232px;
+	font-size: 14px;
 
 	.country-header {
 		margin-bottom: 8px;
@@ -402,8 +420,9 @@
 
 	.panel-country {
 		.country-header {
-			color: hsla(0,0%,100%,.6);
+			color: hsla(0, 0%, 100%, .6);
 		}
+
 		.country-item {
 			border-color: #505050;
 		}

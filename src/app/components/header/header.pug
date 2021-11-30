@@ -6,8 +6,8 @@ header.main-header
 			.header-navigation
 				nav
 					ul.flex.items-center
-						li.nav-item
-							a.nav-link.is-active(href="#", title="title") Home
+						li.nav-item.is-active
+							a.nav-link(href="#", title="title") Home
 						li.nav-item
 							a.nav-link(href="#", title="title") Live
 						li.nav-item.has-submenu
@@ -47,7 +47,7 @@ header.main-header
 										| View all
 										svg.icon.icon-chevron-right(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
 											path(fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z')
-								.submenu-arrow
+								.popover-arrow
 
 						li.nav-item
 							a.nav-link(href="#", title="title") Esports
@@ -58,7 +58,59 @@ header.main-header
 					svg.icon.icon-search(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
 						path(d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z')
 				a.header-btn.header-btn-recharge.border-primary.flex.items-center(href="#", title="Recharge button")
+					img(src="./images/dimond.png", alt="")
 					span.text-truncate Recharge
+				.header-options.header-btn.has-submenu
+					a.submenu-trigger.flex.flex-grow-0.items-center(href="#", title="title")
+						img(src="./images/camera_icon.png", alt="")
+						| Go live
+					.submenu
+						ul
+							li
+								a(href="#", title="title")
+									| PC Streamer
+									svg.icon.icon-chevron-right(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+										path(fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z')
+							li
+								a(href="#", title="title")
+									| Mobile game and Live Show
+									svg.icon.icon-chevron-right(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+										path(fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z')
+							li
+								a(href="#", title="title")
+									| Mobile client
+									svg.icon.icon-chevron-right(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+										path(fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z')
+						.popover-arrow
+				a(href="#", title="title").header-download.header-btn
+					svg.icon.icon-download(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+						path(d='M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z')
+						path(d='M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z')
+				.header-country-options.header-btn
+					button.reset.trigger-btn(type="button" aria-label="country flag")
+						img(src="./images/VN_flag.webp", alt="")
+					.country-options
+						header Choose country/region
+						.country-content.country-current
+							header.country-header My Position
+							.country-list.grid.gap-xs
+								button.text-truncate.col-6.reset.country-item(type="button" aria-label="Viet Nam") Viet Nam
+						.country-content.country-current
+							header.country-header Hot Area
+							.country-list.grid.gap-xs
+								button.text-truncate.col-6.reset.country-item(type="button" aria-label="Viet Nam")
+									span.country-icon
+										picture
+											source(srcset='./images/icon_hot.png' type='image/png')
+											img(src='./images/icon_hot.png' alt='icon')
+									| Global
+								button.text-truncate.col-6.reset.country-item(type="button" aria-label="Viet Nam") Viet Nam
+								button.is-active.text-truncate.col-6.reset.country-item(type="button" aria-label="Viet Nam") Indonesia
+								button.text-truncate.col-6.reset.country-item(type="button" aria-label="Viet Nam") Thailand
+								button.text-truncate.col-6.reset.country-item(type="button" aria-label="Viet Nam") Turkey
+								button.text-truncate.col-6.reset.country-item(type="button" aria-label="Viet Nam") More
+						.popover-arrow
+
 				a.header-btn.header-btn-open-app.bg-primary.color-white.flex.items-center.justify-center(href="#", title="Open App button")
 					span Open App
 				a.header-btn.header-btn-login.bg-primary.color-white.flex.items-center.justify-center(href="#", title="Login button")
@@ -78,7 +130,7 @@ header.main-header
 									span English
 									svg.icon.icon-chevron-right(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
 										path(fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z')
-							button.reset.panel-item.panel-item-more(data-panel="country" type="button" aria-label="country/region")
+							button.reset.panel-item.panel-item-country.panel-item-more(data-panel="country" type="button" aria-label="country/region")
 								span country/region
 								.more.flex.items-center
 									span
@@ -94,15 +146,19 @@ header.main-header
 										input#switch-checkbox.switch-input(type='checkbox')
 										label.switch-label(for='switch-checkbox' aria-hidden='true') Option label
 										.switch-marker(aria-hidden='true')
-							a(href="#", title="login").panel-item
+							a(href="#", title="login").panel-item.panel-item-add
+								span Add to desktop
+							button.reset.panel-item.panel-item-follow(data-panel="follow" type="button" aria-label="Follow")
+								span My Following
+							a(href="#", title="login").panel-item.panel-item-login
 								span Login
-							a(href="#", title="Sign Up").panel-item
+							a(href="#", title="Sign Up").panel-item.panel-item-signup
 								span Sign Up
-							a(href="#", title="Privacy Policy").panel-item
+							a(href="#", title="Privacy Policy").panel-item.panel-item-policy
 								span Privacy Policy
-							a(href="#", title="Cookie Policy").panel-item
+							a(href="#", title="Cookie Policy").panel-item.panel-item-cookie
 								span Cookie Policy
-							a(href="#", title="Open Platform").panel-item
+							a(href="#", title="Open Platform").panel-item.panel-item-open
 								span Open Platform
 						.panel-content
 							.panel-content-item.panel-content-language(data-panel="language")
@@ -130,7 +186,7 @@ header.main-header
 									svg.icon.icon-chevron-left(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
 										path(fill-rule='evenodd' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z')
 									span Please select a country/region
-								.panel-country
+								.panel-country.country-options
 									.country-content.country-current
 										header.country-header My Position
 										.country-list.grid.gap-xs
@@ -149,7 +205,7 @@ header.main-header
 											button.text-truncate.col-6.reset.country-item(type="button" aria-label="Viet Nam") Thailand
 											button.text-truncate.col-6.reset.country-item(type="button" aria-label="Viet Nam") Turkey
 											button.text-truncate.col-6.reset.country-item(type="button" aria-label="Viet Nam") More
-
+						.popover-arrow
 
 
 

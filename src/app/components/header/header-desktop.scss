@@ -4,12 +4,28 @@
 	.main-header-inner {
 		height: 60px;
 
-		.header-navigation {
+		.header-navigation,
+		.header-options,
+		.header-download,
+		.header-country-options {
 			display: block;
+		}
+
+		.submenu {
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.3s ease-in-out,
+				visibility 0.3s ease-in-out;
+
+			&[data-show] {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+
+		.header-navigation {
 			padding-left: 55px;
 			padding-right: 55px;
-
-			// position: relative;
 
 			a {
 				text-decoration: none;
@@ -46,7 +62,24 @@
 					}
 				}
 
-				&:hover {
+				&.is-active {
+					.nav-link {
+						position: relative;
+
+						&::after {
+							content: '';
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							width: 100%;
+							height: 2px;
+							background-color: var(--color-primary);
+						}
+					}
+				}
+
+				&:hover,
+				&.is-active {
 					.nav-link {
 						color: var(--color-primary);
 
@@ -65,82 +98,14 @@
 				font-size: 14px;
 				color: #5a5a5a;
 				transition: color 0.5s ease-in-out;
-
-				&.is-active {
-					color: var(--color-primary);
-
-					.icon {
-						fill: var(--color-primary);
-					}
-
-					border-bottom: solid 1px var(--color-primary);
-				}
 			}
 
 			.submenu {
 				border-radius: 4px;
-				overflow: hidden;
 				background-color: var(--color-white);
 				box-shadow: 0 5px 30px rgb(0, 0, 0, 0.1);
 				width: 420px;
 				padding-top: 10px;
-				transform: scale(0);
-				transform-origin: top center;
-				opacity: 0;
-				visibility: hidden;
-				transition: opacity 0.3s ease-in-out,
-					visibility 0.3s ease-in-out;
-
-				&[data-show] {
-					opacity: 1;
-					visibility: visible;
-				}
-
-				.arrow,
-				.arrow::before {
-					position: absolute;
-					width: 8px;
-					height: 8px;
-					background: inherit;
-				}
-
-				.arrow {
-					visibility: hidden;
-				}
-
-				.arrow::before {
-					visibility: visible;
-					content: '';
-					transform: rotate(45deg);
-				}
-			}
-
-			.submenu-arrow {
-				border-bottom-style: solid;
-				border-bottom-width: 8px;
-				border-left: 10px solid transparent;
-				border-right: 10px solid transparent;
-				border-top: 0 solid transparent;
-				box-shadow: none;
-				height: 0;
-				left: 50%;
-				position: absolute;
-				top: 4px;
-				transform: translateX(-50%);
-				width: 0;
-				border-color: transparent transparent #fff;
-
-				&::after {
-					border-color: transparent transparent #fff;
-					bottom: -12px;
-					content: "";
-					left: -10px;
-					position: absolute;
-
-					height: 0;
-					width: 0;
-					border-width: 0 8px 10px 10px;
-				}
 			}
 
 			.submenu-title {
@@ -205,11 +170,236 @@
 			}
 		}
 
+		.popover-arrow {
+			border-bottom-style: solid;
+			border-bottom-width: 8px;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-top: 0 solid transparent;
+			box-shadow: none;
+			height: 0;
+			left: 50%;
+			position: absolute;
+			top: -8px;
+			transform: translateX(-50%);
+			width: 0;
+			border-color: transparent transparent #fff;
+
+			&::after {
+				border-color: transparent transparent #fff;
+				bottom: -12px;
+				content: "";
+				left: -10px;
+				position: absolute;
+
+				height: 0;
+				width: 0;
+				border-width: 0 8px 10px 10px;
+			}
+		}
+
+		.setting-panel {
+			.popover-arrow {
+				display: block;
+				left: auto;
+				transform: none;
+				right: 18px;
+			}
+		}
+
+		.header-btn-group {
+			.header-btn {
+				margin-left: 12px;
+				margin-right: 12px;
+			}
+		}
+
+		.header-options {
+			a {
+				text-decoration: none;
+				font-size: 14px;
+			}
+
+			.submenu-trigger {
+				color: #5a5a5a;
+				font-size: 1rem;
+
+				img {
+					height: 24.5px;
+					width: 34px;
+				}
+			}
+
+			.submenu {
+				background-color: var(--color-white);
+				box-shadow: 0 5px 30px rgb(0, 0, 0, 0.1);
+				width: 200px;
+
+				ul {
+					padding-top: 10px;
+					padding-bottom: 10px;
+				}
+
+				li {
+					height: 40px;
+					margin-bottom: 5px;
+				}
+
+				a {
+					height: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					padding-left: 20px;
+					padding-right: 20px;
+					color: #000;
+
+					&:hover {
+						color: var(--color-primary);
+					}
+				}
+			}
+		}
+
+		.header-country-options {
+			.trigger-btn {
+				cursor: pointer;
+			}
+
+			.country-options {
+				background-color: var(--color-white);
+				box-shadow: 0 5px 30px rgb(0, 0, 0, 0.1);
+				padding: 15px 20px;
+				border-radius: 4px;
+				opacity: 0;
+				visibility: hidden;
+				transition: opacity 0.3s ease-in-out,
+					visibility 0.3s ease-in-out;
+
+				&[show-popper] {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+
+			.popover-arrow {
+				left: auto;
+				transform: none;
+				right: 10px;
+			}
+		}
+
+		.header-download {
+			color: #5a5a5a;
+		}
+
+		.header-country-options {
+			padding: 0;
+
+			img {
+				display: block;
+			}
+		}
+
+		.header-btn-login {
+			order: 3;
+		}
+
+		.header-btn-signup {
+			order: 2;
+		}
+
 		.header-btn-login,
-		.header-btn-signup,
+		.header-btn-signup {
+			background-color: transparent;
+			border: 1px solid var(--color-primary);
+			color: var(--color-primary);
+			border-radius: 4px;
+			display: flex;
+			align-items: center;
+			padding: 10px 14px;
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				background-color: var(--color-primary);
+				color: var(--color-white);
+			}
+		}
+
+		.header-setting {
+			position: relative;
+
+			.setting-panel {
+				top: 40px;
+				right: 0;
+			}
+
+			.panel-list {
+				padding-right: 10px;
+				padding-left: 10px;
+			}
+
+			.panel-item {
+				padding: 10px;
+				border-radius: 4px;
+				transition: all 0.3s ease-in-out;
+				margin-bottom: 5px;
+
+				&:hover {
+					background-color: var(--color-primary);
+					color: var(--color-white);
+
+					.more {
+						span {
+							color: rgba(255, 255, 255, 0.6);
+						}
+					}
+
+					.switch {
+						.switch-label {
+							background-color: rgba(0, 0, 0, .5);
+						}
+
+						.switch-input:checked {
+							+.switch-label {
+								background-color: #957acc;
+							}
+						}
+					}
+				}
+			}
+
+			.panel-item-add,
+			.panel-item-follow {
+				display: block;
+			}
+
+			.panel-content-language {
+				width: 220px;
+			}
+
+			.panel-item-country,
+			.panel-item-login,
+			.panel-item-signup,
+			.panel-item-policy,
+			.panel-item-cookie,
+			.panel-item-open,
+			.more .icon {
+				display: none;
+			}
+		}
+
 		.header-btn-open-app,
 		.header-btn-search {
 			display: none;
+		}
+
+		.header-btn-recharge {
+			img {
+				display: block;
+				width: 22px;
+				height: 22px;
+			}
 		}
 	}
 }

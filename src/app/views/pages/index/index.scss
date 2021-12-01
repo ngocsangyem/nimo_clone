@@ -1,14 +1,14 @@
 @use "@/styles/styles";
 
-@import '@/components/header/header';
-@import '@/components/streaming-banner/streaming-banner';
-@import '@/components/game-heading/game-heading';
-@import '@/components/top-game/top-game';
-@import '@/components/sport-events/sport-events';
-@import '@/components/streamer-group/streamer-group';
-@import '@/components/streamer-card/streamer-card';
-@import '@/components/pro-team/pro-team';
-@import '@/components/footer/footer';
+@use '@/components/header/header';
+@use '@/components/streaming-banner/streaming-banner';
+@use '@/components/game-heading/game-heading';
+@use '@/components/top-game/top-game';
+@use '@/components/sport-events/sport-events';
+@use '@/components/streamer-group/streamer-group';
+@use '@/components/streamer-card/streamer-card';
+@use '@/components/pro-team/pro-team';
+@use '@/components/footer/footer';
 
 body {
 	background-color: #f8f8f8;

@@ -9,6 +9,25 @@ const panelContentItems = document.querySelectorAll(
 const settingMask = document.querySelector('.setting-mask');
 const submenus = document.querySelectorAll('.has-submenu');
 
+const toggleMobileHeader = () => {
+	const hamburgerBtn = document.querySelector('.header-hamburger');
+	const nav = document.querySelector('.header-navigation');
+	const headerMask = document.querySelector('.header-mask');
+
+	hamburgerBtn?.addEventListener('click', () => {
+		hamburgerBtn.classList.toggle('is-active');
+		nav?.classList.toggle('is-active');
+		headerMask?.classList.toggle('is-active');
+	});
+	headerMask?.addEventListener('click', () => {
+		hamburgerBtn?.classList.remove('is-active');
+		nav?.classList.remove('is-active');
+		headerMask?.classList.remove('is-active');
+	});
+
+
+}
+
 const toggleSettingPanel = () => {
 	const handleToggle = () => {
 		settingPanel?.classList.toggle('is-active');
@@ -143,6 +162,7 @@ const Header = () => {
 	openPanelContent();
 	handleSubmenu();
 	handleCountryOptionsDesktop();
+	toggleMobileHeader()
 };
 
 export { Header };

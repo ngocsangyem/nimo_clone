@@ -64,6 +64,16 @@
 			}
 		}
 	}
+
+	@media (max-width: 768px) {
+		.game-tags {
+			margin-left: -8px;
+
+			a {
+				font-size: 12px;
+			}
+		}
+	}
 }
 
 
@@ -74,14 +84,12 @@
 	a {
 		display: inline-block;
 		text-decoration: none;
-		line-height: 30px;
-		height: 30px;
 		border: 1px solid transparent;
 		border-radius: 4px;
 		cursor: pointer;
 		font-size: 14px;
 		font-weight: 400;
-		padding: 0 19px;
+		padding: 5px 19px;
 		position: relative;
 		text-align: center;
 		touch-action: manipulation;

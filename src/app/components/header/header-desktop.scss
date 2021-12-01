@@ -7,8 +7,13 @@
 		.header-navigation,
 		.header-options,
 		.header-download,
-		.header-country-options {
+		.header-country-options,
+		.header-mask {
 			display: block;
+		}
+
+		.header-btn-recharge {
+			display: flex;
 		}
 
 		.submenu {
@@ -62,24 +67,7 @@
 					}
 				}
 
-				&.is-active {
-					.nav-link {
-						position: relative;
-
-						&::after {
-							content: '';
-							position: absolute;
-							bottom: 0;
-							left: 0;
-							width: 100%;
-							height: 2px;
-							background-color: var(--color-primary);
-						}
-					}
-				}
-
-				&:hover,
-				&.is-active {
+				&:hover {
 					.nav-link {
 						color: var(--color-primary);
 
@@ -303,6 +291,7 @@
 
 		.header-btn-login {
 			order: 3;
+			white-space: nowrap;
 		}
 
 		.header-btn-signup {
@@ -390,7 +379,8 @@
 		}
 
 		.header-btn-open-app,
-		.header-btn-search {
+		.header-btn-search,
+		.header-hamburger {
 			display: none;
 		}
 

@@ -5,13 +5,17 @@
 @import '@/components/game-heading/game-heading';
 @import '@/components/top-game/top-game';
 @import '@/components/sport-events/sport-events';
+@import '@/components/streamer-group/streamer-group';
+@import '@/components/streamer-card/streamer-card';
+@import '@/components/pro-team/pro-team';
+@import '@/components/footer/footer';
 
 body {
 	background-color: #f8f8f8;
 }
 
 .index-section {
-	margin-bottom: 30px;
+	margin-bottom: 40px;
 }
 
 .slide-controls {

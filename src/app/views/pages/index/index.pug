@@ -9,4 +9,40 @@ block main
 	include @/components/streaming-banner/streaming-banner.pug
 	include @/components/top-game/top-game.pug
 	include @/components/sport-events/sport-events.pug
+	include @/components/streamer-group/streamer-group.pug
+	include @/components/pro-team/pro-team.pug
+	section.streamer-group.index-section
+		.container
+			.game-heading
+				.game-heading-inner.has-tags
+					h2
+						span PUBG
+						a(href="#", title="title")
+							| View All
+							svg.icon.icon-chevron-right(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+								path(fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z')
+			.grid.gap-md
+				- for (var i=0; i<5; i++)
+					div(class="col-6 col-4@md col-2@lg")
+						.streamer-card
+							a(href="#", title="title")
+								.streamer-card-cover
+									.cover-image
+										img(src="./images/streamer_cover.jpeg", alt="")
+									.play-icon
+										svg.icon.icon-play-fill(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+											path(d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z')
+									span.cover-badge.cover-badge-warning GTA5
+							.streamer-card-infor
+								.streamer-avatar
+									img(src="./images/streamer_avatar.png", alt="")
+								.streamer-desc
+									h3
+										a.text-truncate(href="#", title="title") From Snake With Love !
+									a.text-truncate.streamer-nickname(href="") Snake
+									footer
+										.user-count
+											svg.icon.icon-people(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+												path(d='M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z')
+											| 6.5k
 	

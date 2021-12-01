@@ -1,0 +1,14 @@
+section.streamer-group.index-section
+	.container
+		.game-heading
+			.game-heading-inner.has-tags
+				h2
+					span Hot
+					a(href="#", title="title")
+						| View All
+						svg.icon.icon-chevron-right(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+							path(fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z')
+		.grid.gap-md
+			- for (var i=0; i<11; i++)
+				div(class="col-6 col-4@md col-2@lg")
+					include ../streamer-card/streamer-card.pug

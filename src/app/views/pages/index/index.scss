@@ -2,3 +2,35 @@
 
 @import '@/components/header/header';
 @import '@/components/streaming-banner/streaming-banner';
+@import '@/components/game-heading/game-heading';
+@import '@/components/top-game/top-game';
+@import '@/components/sport-events/sport-events';
+
+body {
+	background-color: #f8f8f8;
+}
+
+.index-section {
+	margin-bottom: 30px;
+}
+
+.slide-controls {
+	display: flex;
+	align-items: center;
+	button {
+		border: 1px solid #dcdcdc;
+		border-radius: 4px;
+		height: 34px;
+		background-color: #fff;
+		box-shadow: 0 4px 8px rgb(0, 0, 0, 0.1);
+		color: #5a5a5a;
+
+		&:first-child {
+			margin-right: 8px;
+		}
+
+		&.swiper-button-disabled {
+			cursor: not-allowed;
+		}
+	}
+}

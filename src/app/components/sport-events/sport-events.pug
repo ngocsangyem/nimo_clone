@@ -1,0 +1,75 @@
+section.sport-events.index-section
+	.container
+		.grid.gap-md
+			div(class="col-4@lg")
+				.recommended-events.grid.gap-md
+					div(class="col-8@lg")
+						.recommended-title.game-heading.has-slide
+							.game-heading-inner.has-tags
+								h2
+									span Recommended
+							.slide-controls
+								button(type="button").swiper-button-prev
+									svg.icon-chevron-left(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+										path(fill-rule='evenodd' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z')
+
+								button(type="button").swiper-button-next
+									svg.icon-chevron-right(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+										path(fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z')
+					div(class="col-4@lg empty-dev")
+					div(class="col-8@lg")
+						.recommended-slides.swiper
+							.swiper-wrapper
+								.swiper-slide
+									img(src="./images/recommended_slide.jpeg", alt="")
+								.swiper-slide
+									img(src="./images/recommended_slide.jpeg", alt="")
+								.swiper-slide
+									img(src="./images/recommended_slide.jpeg", alt="")
+								.swiper-slide
+									img(src="./images/recommended_slide.jpeg", alt="")
+								.swiper-slide
+									img(src="./images/recommended_slide.jpeg", alt="")
+							.swiper-pagination
+					div(class="col-4@lg")
+						.recommended-items
+							a.recommended-item(href="#", title="title")
+								img(src="./images/recommended_slide.jpeg", alt="")
+							a.recommended-item(href="#", title="title")
+								img(src="./images/recommended_slide.jpeg", alt="")
+			div(class="col-8@lg")
+				.grid.gap-md(class="height-100%")
+					.col-12
+						.esports-events-title.game-heading.has-slide
+							.game-heading-inner.has-tags
+								h2
+									span Esports Events
+									a(href="#", title="title")
+										| All Events
+										svg.icon.icon-chevron-right(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+											path(fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z')
+							.slide-controls
+								button(type="button").swiper-button-prev
+									svg.icon-chevron-left(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+										path(fill-rule='evenodd' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z')
+
+								button(type="button").swiper-button-next
+									svg.icon-chevron-right(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+										path(fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z')
+					.col-12
+						.event-schedules.swiper
+							.swiper-wrapper
+								- for (var i=0; i<7; i++)
+									.swiper-slide
+										.event-schedule-card
+											a(href="#", title="title") 
+												.event-banner
+													.event-image
+														img(src="./images/recommended_slide.jpeg", alt="")
+													h3.event-title ESA OPEN FIRE SERIES
+													span.event-badge VALORANT
+											.event-infor
+												time Nov 30, 10:00 PM
+												.event-logo
+													img(src="./images/recommended_slide.jpeg", alt="")
+												button.reset.event-action.is-watch(type="button") Watch the video

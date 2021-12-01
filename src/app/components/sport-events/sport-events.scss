@@ -1,6 +1,24 @@
+
+@use '@/styles/base'as *;
 .sport-events {
 	.game-heading {
-		margin-bottom: 5px;
+		&:not(.recommended-title) {
+			margin-bottom: 20px;
+		}
+		&.desktop {
+			display: none;
+		}
+		@include breakpoint(lg) {
+			&.recommended-title {
+				margin-bottom: 20px;
+			}
+			&.desktop {
+				display: flex;
+			}
+			&.mobile {
+				display: none;
+			}
+		}
 	}
 }
 
@@ -27,11 +45,22 @@
 		transition: all 0.5s ease-in-out;
 		border-radius: 4px;
 		padding: 2px;
+		height: 100%;
+
+		img {
+			height: 100%;
+			object-fit: cover;
+			border-radius: 4px;
+			width: 100%;
+		}
 
 		&:hover {
 			background-color: var(--color-primary);
 			box-shadow: 0 5px 10px 0 rgb(68, 0, 128, 0.4);
 		}
+	}
+	@media (max-width: 1280px) {
+		flex-direction: row;
 	}
 }
 
@@ -56,6 +85,8 @@
 	img {
 		height: 100%;
 		object-fit: cover;
+		border-radius: 4px;
+		width: 100%;
 	}
 
 	.swiper-pagination-bullet {
@@ -72,6 +103,21 @@
 		&.swiper-pagination-bullet-active {
 			width: 24px;
 			background-color: #fff;
+		}
+	}
+}
+
+.event-schedules {
+	height: 100%;
+	@include breakpoint(xl) {
+		.event-schedule-card {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.event-infor {
+			flex-grow: 1;
 		}
 	}
 }

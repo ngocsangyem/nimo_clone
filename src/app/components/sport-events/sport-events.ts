@@ -36,11 +36,11 @@ const handleEsportsEventsSlides = () => {
 			},
 			// when window width is >= 480px
 			768: {
-				slidesPerView: 4,
+				slidesPerView: 3,
 				spaceBetween: 15,
 			},
 			// when window width is >= 640px
-			1700: {
+			2000: {
 				slidesPerView: 5,
 				spaceBetween: 20,
 			},

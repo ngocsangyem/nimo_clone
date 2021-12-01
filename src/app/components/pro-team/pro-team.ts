@@ -3,7 +3,7 @@ import Swiper, { Navigation, Pagination } from 'swiper';
 const handleSlides = () => {
 	Swiper.use([Navigation, Pagination]);
 	const swiper = new Swiper('.pro-team .pro-team-slides.swiper', {
-		slidesPerView: 2,
+		slidesPerView: 1,
 		spaceBetween: 50,
 		freeMode: true,
 		autoHeight: true,
@@ -13,10 +13,10 @@ const handleSlides = () => {
 		},
 		breakpoints: {
 			1300: {
-				slidesPerView: 2,
+				slidesPerView: 3,
 				spaceBetween: 30,
 			},
-			1700: {
+			2000: {
 				slidesPerView: 4,
 				spaceBetween: 30,
 			},

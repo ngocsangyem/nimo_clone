@@ -1,7 +1,7 @@
 @use '@/styles/base'as *;
 
 .main-header-inner {
-	@media (max-width: 1280px) {
+	@media (max-width: 766px) {
 		.header-mask {
 			position: fixed;
 			top: 50px;

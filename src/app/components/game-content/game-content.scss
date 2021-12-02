@@ -1,0 +1,90 @@
+@use '@/styles/base'as *;
+
+.game-content {
+	.game-content-container {
+		padding-right: 16px;
+		padding-left: 16px;
+	}
+
+	.game-content-title {
+		margin-bottom: 20px;
+		margin-top: 20px;
+
+		span {
+			font-weight: 400;
+			font-size: 28px;
+			display: inline-block;
+			margin-bottom: 10px;
+		}
+	}
+
+	.game-content-filter {
+		margin-left: -8px;
+	}
+
+	.filter-item {
+		display: inline-block;
+		margin-left: 8px;
+		margin-right: 8px;
+
+		background-image: none;
+		border: 1px solid transparent;
+		border-radius: 4px;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 14px;
+		font-weight: 400;
+		padding: 7px 19px;
+		position: relative;
+		text-align: center;
+		touch-action: manipulation;
+		transition: all .3s cubic-bezier(.645, .045, .355, 1);
+		user-select: none;
+		white-space: nowrap;
+		margin-bottom: 5px;
+
+		text-decoration: none;
+
+		border-color: #bfbfbf;
+		color: #bfbfbf;
+
+		&:hover {
+			background-color: #d9d9d9;
+			border-color: #d9d9d9;
+			color: #fff;
+		}
+
+		&.is-active {
+			background-color: var(--color-primary);
+			color: var(--color-white);
+			border-color: var(--color-primary);
+		}
+	}
+
+	@include breakpoint(sm) {
+		.game-content-container {
+			margin-left: 50px;
+			margin-right: 50px;
+			padding: 0;
+		}
+	}
+
+	@media (max-width: 766px) {
+		.filter-item {
+			padding: 5px 13px;
+		}
+	}
+}
+
+.game-grid {
+	margin-left: -6px;
+	.game-item {
+		margin-bottom: 20px;
+	}
+	@media (min-width: 1500px) {
+		.game-item {
+			--grid-columns: 8;
+			--span: 1;
+		}
+	}
+}

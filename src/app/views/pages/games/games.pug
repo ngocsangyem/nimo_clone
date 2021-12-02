@@ -1,0 +1,23 @@
+extends ../../_layouts/_layout
+
+block var
+	- title = 'Games'
+	- bodyClass = 'game'
+
+
+block main
+	section.flex
+		include @/components/sidebar/sidebar.pug
+		.game-content
+			.game-content-container
+				h2.game-content-title
+					span PC game
+					.game-content-filter
+						a.filter-item.is-active(href="#", title="title") All
+						a.filter-item(href="#", title="title") Mobile game
+						a.filter-item(href="#", title="title") PC game
+						a.filter-item(href="#", title="title") Others
+				.game-list.grid.game-grid
+					- for (var i=0; i<20; i++)
+						div(class="col-4 col-3@md game-item")
+							include @/components/game-card/game-card.pug

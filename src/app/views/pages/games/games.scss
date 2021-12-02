@@ -1,0 +1,11 @@
+@use "@/styles/styles";
+
+@use '@/components/header/header';
+@use '@/components/footer/footer';
+@use '@/components/sidebar/sidebar';
+@use '@/components/game-content/game-content';
+@use '@/components/game-card/game-card';
+
+body {
+	background-color: #f8f8f8;
+}

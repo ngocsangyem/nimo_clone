@@ -273,23 +273,24 @@
 			margin-top: auto;
 		}
 	}
-
-	.sidebar-icon {
-		border: 1px solid transparent;
-		border-radius: 4px;
-		color: hsla(0, 0%, 100%, .6);
-		cursor: pointer;
-		font-size: 22px;
-		padding: 14px 13px;
-		display: flex;
-		align-items: center;
-
-		.icon {
-			--size: 22px;
-		}
-
-		&:hover {
-			background-color: #323232;
+	.sidebar-collapse {
+		.sidebar-icon {
+			border: 1px solid transparent;
+			border-radius: 4px;
+			color: hsla(0, 0%, 100%, .6);
+			cursor: pointer;
+			font-size: 22px;
+			padding: 14px 13px;
+			display: flex;
+			align-items: center;
+	
+			.icon {
+				--size: 22px;
+			}
+	
+			&:hover {
+				background-color: #323232;
+			}
 		}
 	}
 

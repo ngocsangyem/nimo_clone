@@ -1,0 +1,99 @@
+@use '@/styles/base'as *;
+.game-banner {
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.game-banner-image,
+	.game-banner-mask {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+	}
+
+	.game-banner-image {
+		background-color: #300066;
+		width: 100%;
+	}
+
+	.game-banner-mask {
+		width: 830px;
+		background: linear-gradient(270deg, transparent, rgba(0, 0, 0, .5));
+	}
+
+	.game-banner-desc {
+		padding: 40px 16px 0;
+		position: relative;
+		color: var(--color-white);
+
+		p, .game-banner-title {
+			-webkit-box-orient: vertical;
+			display: -webkit-box;
+			display: -moz-box;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		p {
+			color: hsla(0, 0%, 100%, .8);
+			line-height: normal;
+			max-width: 680px;
+			-moz-line-clamp: 3;
+			-webkit-line-clamp: 3;
+			font-size: 14px;
+			margin-bottom: 10px;
+		}
+
+		.game-banner-title {
+			font-size: 46px;
+			font-weight: 700;
+			line-height: normal;
+			max-width: 680px;
+
+			-moz-line-clamp: 2;
+			-webkit-line-clamp: 2;
+			margin-bottom: 10px;
+
+			color: var(--color-white);
+		}
+	}
+
+	.game-banner-live-count{
+		display: inline-flex;
+		align-items: center;
+		margin-bottom: 10px;
+		font-size: 16px;
+
+		.icon {
+			--size: 16px;
+			margin-right: 8px;
+		}
+	}
+
+	.sport-navigate {
+		display: flex;
+		align-items: center;
+		font-size: 16px;
+		line-height: 18px;
+		text-decoration: none;
+		color: var(--color-white);
+
+		.icon {
+			--size: 12px;
+			margin-left: 8px;
+			margin-top: 2px;
+		}
+	}
+
+	@include breakpoint(sm) {
+		.game-banner-desc {
+			padding-right: 50px;
+			padding-left: 50px;
+			width: calc(100% - 100px);
+		}
+	}
+}

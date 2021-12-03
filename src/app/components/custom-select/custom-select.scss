@@ -1,0 +1,224 @@
+@use '@/styles/base'as *;
+
+.form-item__select {
+
+	--select-dropdown-gap: 4px;
+
+	.form-control--float {
+		position: absolute;
+		width: var(--input-icon-size);
+		height: var(--input-icon-size);
+		top: calc(50% - var(--input-icon-size)/2);
+	}
+
+	&[class*=right] {
+		.form-control {
+			padding-right: calc(var(--form-control-padding-x) + var(--input-icon-size) + var(--input-icon-text-gap));
+		}
+
+		.form-control--float {
+			right: var(--form-control-padding-x);
+		}
+	}
+
+	.form-control-group {
+		position: relative;
+
+		display: flex;
+	}
+
+	.form-control-group {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.select__button {
+		width: 100%;
+		cursor: pointer;
+		padding: 7px 19px;
+		position: relative;
+		background-color: #fcfcfc;
+		border: 1px solid #f5f5f5;
+		border-radius: 4px;
+		color: #000;
+		font-size: 14px;
+		user-select: none;
+		padding-right: 11px;
+		padding-left: 11px;
+		transition: all .3s cubic-bezier(.645,.045,.355,1);
+
+		&:hover {
+			border-color: #bbb;
+		}
+	}
+
+	.select__button {
+		text-align: left;
+	}
+
+	.search-btn {
+		cursor: pointer;
+	}
+
+
+	.select__button[aria-expanded="true"] {
+		// custom select control if dropdown = visible
+	}
+
+	.select__dropdown {
+		// created in JS - custom select dropdown
+		position: absolute;
+		left: 0;
+		top: 100%;
+		// min-width: 200px;
+		max-height: 1px; // updated in JS
+		background-color: var(--color-bg);
+		box-shadow: var(--shadow-md);
+		// padding: var(--space-xxs) 0;
+		border-radius: var(--radius);
+		z-index: var(--zindex-popover);
+		margin-top: var(--select-dropdown-gap);
+		margin-bottom: var(--select-dropdown-gap);
+		overflow: auto;
+
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0s .2s, opacity .2s;
+		border-radius: 4px;
+	}
+
+	.select__dropdown--right {
+		// change dropdown position based on the available space
+		right: 0;
+		left: auto;
+	}
+
+	.select__dropdown--up {
+		bottom: 100%;
+		top: auto;
+	}
+
+
+	.select__button[aria-expanded="true"]+.select__dropdown {
+		visibility: visible;
+		opacity: 1;
+		transition: visibility 0s, opacity .2s;
+	}
+
+	// custom <optgroup> list - include all <option>s if no <optgroup> available 
+	.select__list {
+		list-style: none;
+		min-height: 314px;
+		overflow-y: auto;
+
+		&::-webkit-scrollbar {
+			height: 8px;
+			width: 8px;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: #dcdcdc;
+			border-radius: 8px;
+		}
+	}
+
+	.select__list:not(:first-of-type) {
+		padding-top: var(--space-xxs);
+	}
+
+	.select__list:not(:last-of-type) {
+		border-bottom: 1px solid var(--color-contrast-low);
+		padding-bottom: var(--space-xxs);
+	}
+
+	.select__item {
+		// single item inside .select__list
+		display: block;
+		padding-top: var(--form-control-padding-y, 0.5em);
+		padding-bottom: var(--form-control-padding-y, 0.5em);
+		padding-left: var(--form-control-padding-x, 0.75em);
+		padding-right: var(--form-control-padding-x, 0.75em);
+		color: var(--color-contrast-high);
+		width: 100%;
+		text-align: left;
+		// truncate text
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+		font-size: rem(14px);
+	}
+
+	.select__item--optgroup {
+		// custom <optgroup> label
+		font-size: var(--text-sm);
+		color: var(--color-contrast-medium);
+	}
+
+	.select__item--option {
+		// custom <option> label
+		cursor: pointer;
+		font-size: 14px;
+		font-weight: 400;
+
+		&:hover {
+			background-color: rgba(98,45,247,.1);
+			color: #000;
+		}
+
+		&:focus {
+			outline: none;
+			background-color: alpha(var(--color-primary), 0.1);
+		}
+
+		&[aria-selected=true] {
+			// selected option
+			background-color: rgba(98,45,247,.1);
+			color: #000;
+			position: relative;
+			@include fontSmooth;
+
+			// &::after {
+			// 	// check icon next to the selected language
+			// 	content: '';
+			// 	position: absolute;
+			// 	top: 50%;
+			// 	transform: translateY(-50%);
+			// 	height: 16px;
+			// 	width: 16px;
+			// 	right: var(--space-sm);
+			// 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpolyline stroke-width='1.5' stroke='%23ffffff' fill='none' stroke-linecap='round' stroke-linejoin='round' points='1,9 5,13 15,3 '/%3E%3C/svg%3E");
+			// 	background-repeat: no-repeat;
+			// 	background-size: cover;
+			// 	background-position: center;
+			// }
+		}
+	}
+}
+
+.form-control-group {
+	--input-icon-size: 1rem; // icon size
+	--input-icon-text-gap: var(--space-sm); // gap between icon and text
+	--form-control-padding-x: 17px;
+
+	max-width: 20rem;
+	width: 150px;
+
+	position: relative;
+
+	.custom-wrapper {
+		width: 100%;
+	}
+
+	.icon {
+		transition: transform 0.3s ease-in-out;
+	}
+
+	&.is-open {
+		.select__button {
+			border-color: var(--color-primary);
+		}
+		.icon {
+			transform: rotate(180deg);
+		}
+	}
+}

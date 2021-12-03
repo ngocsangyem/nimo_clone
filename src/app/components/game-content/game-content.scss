@@ -1,6 +1,8 @@
 @use '@/styles/base'as *;
 
 .game-content {
+	width: 100%;
+
 	.game-content-container {
 		padding-right: 16px;
 		padding-left: 16px;
@@ -18,8 +20,37 @@
 		}
 	}
 
+	.game-content-title-primary {
+		margin-bottom: 30px;
+		color: var(--color-primary);
+		font-size: 21px;
+		display: inline-block;
+	}
+
 	.game-content-filter {
-		margin-left: -8px;
+		&:not(.has-select) {
+			margin-left: -8px;
+		}
+
+		&.has-select {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+
+		.form-label {
+			font-size: 14px;
+			margin-bottom: 0;
+		}
+
+		.form-item__select {
+			margin-right: 32px;
+			margin-bottom: 5px;
+			position: relative;
+
+			display: flex;
+			align-items: center;
+		}
 	}
 
 	.filter-item {
@@ -55,9 +86,26 @@
 		}
 
 		&.is-active {
-			background-color: var(--color-primary);
-			color: var(--color-white);
 			border-color: var(--color-primary);
+
+			&:not(.is-outline) {
+				color: var(--color-white);
+				background-color: var(--color-primary);
+			}
+		}
+
+		&.is-outline.is-active {
+			color: var(--color-primary);
+			background-color: transparent;
+		}
+	}
+
+	.game-area-head {
+		@media (min-width: 1026px) {
+			min-height: 280px;
+			overflow: hidden;
+			margin-bottom: 30px;
+			position: relative;
 		}
 	}
 
@@ -78,9 +126,11 @@
 
 .game-grid {
 	margin-left: -6px;
+
 	.game-item {
 		margin-bottom: 20px;
 	}
+
 	@media (min-width: 1500px) {
 		.game-item {
 			--grid-columns: 8;

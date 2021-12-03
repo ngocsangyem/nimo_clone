@@ -1,0 +1,60 @@
+@use '../../../../node_modules/swiper/swiper.scss';
+
+.filter-navigation {
+	position: sticky;
+	top: 3.043rem;
+	// width: 100%;
+	z-index: 2;
+	background-color: #fff;
+	color: #5a5a5a;
+
+	.nav-icon {
+		width: 2.609rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.filter-navigation-inner {
+		display: flex;
+		align-items: center;
+		height: 2.609rem;
+		box-shadow: 0 0.087rem 0.217rem 0 rgb(0, 0, 0, 0.05);
+		padding-left: env(safe-area-inset-left);
+		padding-right: env(safe-area-inset-right);
+		align-self: flex-start;
+	}
+
+	.nav-links {
+		// display: flex;
+		// flex: 1;
+		// justify-content: flex-start;
+		// overflow-x: scroll;
+		// overflow-y: hidden;
+		// white-space: nowrap;
+	}
+
+	.nav-link {
+		text-decoration: none;
+		color: #5a5a5a;
+		font-size: 14px;
+		display: flex;
+		border: 1px solid transparent;
+
+		span {
+			display: inline-block;
+			max-width: 5.217rem;
+			overflow: hidden;
+			padding: 0.435rem 1rem;
+			text-align: center;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		&.is-active {
+			border-color: var(--color-primary);
+			color: var(--color-primary);
+			border-radius: 0.304rem;
+		}
+	}
+}

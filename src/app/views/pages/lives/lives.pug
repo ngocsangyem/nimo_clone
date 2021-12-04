@@ -1,0 +1,81 @@
+extends ../../_layouts/_layout
+
+block var
+	- title = 'Lives'
+	- bodyClass = 'live'
+include @/components/custom-select/custom-select.pug
+
+block main
+	section.flex
+		include @/components/sidebar/sidebar.pug
+		.game-content.game-live-content
+			.game-content-container
+				h2.game-content-title-primary
+					span Lives
+				.game-detail-title
+					h2 Lives
+					a(href="#", title="title")
+						| Esports Events
+						svg.icon.icon-chevron-right(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+							path(fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z')
+				.game-content-filter.has-select
+					+custom-select({
+						label: 'Choose country/region：',
+						class: 'form-item__select form-item--icon-right',
+						icon: {
+							visible: true,
+							template: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon form-control--float icon-chevron-down" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/> </svg>'
+						},
+						field: {
+							element: 'select',
+							class: '',
+							options: [
+								{
+									name: 'Vietnam',
+									value: 'Vietnam'
+								},
+								{
+									name: 'Indonesia',
+									value: 'Indonesia'
+								},
+								{
+									name: 'Global',
+									value: 'Global'
+								},
+								{
+									name: 'Brazil',
+									value: 'Brazil'
+								},
+								{
+									name: 'Morocco',
+									value: 'Morocco'
+								},
+								{
+									name: 'Mexico',
+									value: 'Mexico'
+								},
+								{
+									name: 'Turkey',
+									value: 'Turkey'
+								},
+								{
+									name: 'Thailand',
+									value: 'Thailand'
+								},
+								{
+									name: 'More',
+									value: 'More'
+								}
+							],
+							placeholder: '',
+							id: 'selectValue'
+						},
+					})(data-trigger-class="custom-select")
+					a.filter-item.is-active.is-outline(href="#", title="title") All
+					a.filter-item(href="#", title="title") Mobile game
+					a.filter-item(href="#", title="title") PC game
+					a.filter-item(href="#", title="title") Others
+				.grid.gap-xs.streamer-list
+					- for (var i=0; i<20; i++)
+						div(class="col-6 col-3@md streamer-item")
+							include @/components/streamer-card/streamer-card.pug

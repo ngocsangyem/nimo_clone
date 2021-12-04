@@ -2,19 +2,37 @@
 
 .sidebar {
 	color: hsla(0, 0%, 100%, .6);
-
+	position: relative;
+	z-index: 1;
 
 	a {
 		text-decoration: none;
 	}
 
-	.sidebar-collapse {
-		display: none;
+	.sidebar-collapse,
+	.sidebar-expand {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		opacity: 0;
+		visibility: hidden;
+		// transition: all 0.2s ease-in-out;
+	}
+
+	.sidebar-expand {
+		width: 100%;
+		left: 0;
+	}
+
+	.sidebar-expand {
+		opacity: 1;
+		visibility: visible;
 	}
 
 	.sidebar-container {
 		width: 220px;
 		box-shadow: 0 5px 20px rgb(0, 0, 0, 0.4);
+		transition: width 0.3s ease-in-out;
 	}
 
 	.sidebar-arrow {
@@ -43,6 +61,7 @@
 		width: 220px;
 		background-color: #1e1e1e;
 		display: flex;
+		transition: transform 0.3s cubic-bezier(0.23, 1, 0.320, 1);
 	}
 
 	.sidebar-logo {
@@ -88,6 +107,9 @@
 	.sidebar-scrolling {
 		height: calc(100vh - 370px);
 		overflow-y: auto;
+		@media (orientation: landscape) {
+			height: 100vh;
+		}
 	}
 
 	.sidebar-title {
@@ -155,6 +177,9 @@
 		padding: 14px;
 		position: absolute;
 		width: 100%;
+		@media (orientation: landscape) {
+			display: none;
+		}
 	}
 
 	.sidebar-bottom-download {
@@ -266,13 +291,17 @@
 
 
 	.sidebar-collapse {
+		display: flex;
 		flex-direction: column;
 		height: 100%;
+		width: 50px;
+		right: 0;
 
 		.sidebar-collapse-download {
 			margin-top: auto;
 		}
 	}
+
 	.sidebar-collapse {
 		.sidebar-icon {
 			border: 1px solid transparent;
@@ -283,11 +312,11 @@
 			padding: 14px 13px;
 			display: flex;
 			align-items: center;
-	
+
 			.icon {
 				--size: 22px;
 			}
-	
+
 			&:hover {
 				background-color: #323232;
 			}
@@ -306,22 +335,25 @@
 		}
 
 		.sidebar-collapse {
-			display: flex;
+			opacity: 1;
+			visibility: visible;
 		}
 
-		.sidebar-inner,
 		.sidebar-container {
-			width: 50px;
+			width: 52px;
+		}
+		.sidebar-inner {
+			transform: translateX(-168px);
 		}
 
 		.sidebar-expand {
-			display: none;
+			opacity: 0;
+			visibility: hidden;
 		}
 	}
 
 	@include breakpoint(sm) {
 		display: block;
-
 	}
 
 	@include breakpoint(lg) {
@@ -335,17 +367,18 @@
 			display: none;
 		}
 
-		.sidebar-inner,
-		.sidebar-container {
+		.sidebar-container, .sidebar-inner {
 			width: 50px;
 		}
 
 		.sidebar-expand {
-			display: none;
+			opacity: 0;
+			visibility: hidden;
 		}
 
 		.sidebar-collapse {
-			display: flex;
+			opacity: 1;
+			visibility: visible;
 		}
 	}
 }

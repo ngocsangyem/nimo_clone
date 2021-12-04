@@ -111,6 +111,7 @@
 	},
 	"dependencies": {
 		"@popperjs/core": "^2.11.0",
+		"mobile-device-detect": "^0.4.3",
 		"swiper": "^7.3.0"
 	}
 }

@@ -15,7 +15,7 @@ task(
 	series([
 		'clean',
 		'compile:templates',
-		parallel('compile:styles', 'compile:scripts', 'imagemin', 'copy:fonts'),
+		parallel('copy:css', 'compile:styles', 'compile:scripts', 'imagemin', 'copy:fonts'),
 		'assets',
 		'inject',
 		'watch',
@@ -28,7 +28,7 @@ task(
 	series([
 		'clean',
 		'compile:templates',
-		parallel('compile:styles', 'compile:scripts', 'imagemin', 'copy:fonts'),
+		parallel('copy:css', 'compile:styles', 'compile:scripts', 'imagemin', 'copy:fonts'),
 		'assets',
 		'inject',
 		'stat',

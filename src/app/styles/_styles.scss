@@ -1,3 +1,4 @@
+// If you want to modify breakpoints, you need to comment line 12 then compile this file then copy the css file into assets/css
 @use 'base'with ($breakpoints: ('xs': 32rem, // ~512px
 		'sm': 48rem, // ~768px
 		'md': 64rem, // ~1024px

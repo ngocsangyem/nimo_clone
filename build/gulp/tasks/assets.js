@@ -44,6 +44,7 @@ const output = () =>
 		if (ext === '.js') {
 			return outputJs(file, name);
 		} else if (ext === '.css') {
+			console.log('css');
 			return outputCss(file, name);
 		} else {
 			return outputAssets(file);

@@ -109,11 +109,32 @@
 		}
 	}
 
+	.top-game-front {
+		.top-game-icon {
+			height: 30px;
+			width: 30px;
+
+			.icon {
+				--size: 17px
+			}
+		}
+	}
+	
+
 	@include breakpoint(sm) {
 		.game-content-container {
 			margin-left: 50px;
 			margin-right: 50px;
 			padding: 0;
+		}
+	}
+
+	@media (min-width: 1400px) {
+		.top-game-card {
+			h3 {
+				margin-top: 5px;
+				text-align: center;
+			}
 		}
 	}
 
@@ -127,9 +148,9 @@
 .game-grid {
 	margin-left: -6px;
 
-	.game-item {
-		margin-bottom: 20px;
-	}
+	// .game-item {
+	// 	margin-bottom: 20px;
+	// }
 
 	@media (min-width: 1500px) {
 		.game-item {

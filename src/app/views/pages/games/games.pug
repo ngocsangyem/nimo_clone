@@ -17,7 +17,19 @@ block main
 						a.filter-item(href="#", title="title") Mobile game
 						a.filter-item(href="#", title="title") PC game
 						a.filter-item(href="#", title="title") Others
-				.game-list.grid.game-grid
+				.game-list.grid.game-grid.gap-md
 					- for (var i=0; i<20; i++)
 						div(class="col-4 col-3@md game-item")
-							include @/components/game-card/game-card.pug
+							.top-game-card
+								a.top-game-link(href="#", title="title")
+									.top-game-content
+										.top-game-front
+											.top-game-image
+												img(src="./images/top_card.jpeg", alt="")
+											.top-game-desc
+												h5.text-truncate Liveshow
+												.short-bar
+												.top-game-icon
+													svg.icon.icon-chevron-right(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+														path(fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z')
+								h3 Liveshow

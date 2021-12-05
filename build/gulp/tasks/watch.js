@@ -56,7 +56,7 @@ const watchChanges = (done) => {
 		).on('unlink', (file) => cleaningHTML(file));
 
 		// Scripts
-		watch(paths.app('**', '*.ts'), series('compile:scripts'));
+		watch(paths.app('**', '*.ts'), series('compile:scripts:all'));
 
 		// Images
 		watch(

@@ -79,10 +79,9 @@ const dependentsPlugin = () =>
 const compileStyles = () => {
 	return src(inputs(), {
 		cwd: paths.app(dirs.styles),
-		since: lastRun('compile:styles:all'),
 	})
 		.pipe(pluginErrorHandle())
-		.pipe(dependentsPlugin())
+		// .pipe(dependentsPlugin())
 		// .pipe(filter())
 		.pipe(sourcemapsInit())
 		.pipe(compileSass())

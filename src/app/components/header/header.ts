@@ -12,9 +12,11 @@ const submenus = document.querySelectorAll('.has-submenu');
 
 const handleSearch = () => {
 	const headerSearchBox = document.querySelector('.header-search-box');
-	const searchInput = headerSearchBox?.querySelector('.search-input');
+	const searchInput = <HTMLInputElement>headerSearchBox?.querySelector('.search-input');
 	const searchForm = <HTMLElement>headerSearchBox?.querySelector('.header-search-form');
 	const headerSearchList = <HTMLElement>headerSearchBox?.querySelector('.header-search-list');
+	const searchSuggest = headerSearchBox?.querySelector('.search-suggest');
+	const searchResult = headerSearchBox?.querySelector('.search-result');
 	const popperInstance = createPopper(searchForm, headerSearchList, {
 		modifiers: [
 			{
@@ -36,6 +38,18 @@ const handleSearch = () => {
 		headerSearchBox?.classList.remove('is-focus');
 		headerSearchList.classList.remove('is-active');
 	});
+
+	const onInput = () => {
+		if (searchInput.value) {
+			popperInstance.update();
+			headerSearchList.classList.add('show-result');
+		} else {
+			popperInstance.update();
+			headerSearchList.classList.remove('show-result');
+		}
+	}
+
+	searchInput?.addEventListener('input', debounce(onInput, 400))
 }
 
 const toggleMobileHeader = () => {

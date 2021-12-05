@@ -106,6 +106,10 @@
 			overflow: hidden;
 			margin-bottom: 30px;
 			position: relative;
+
+			&.has-entry {
+				min-height: 480px;
+			}
 		}
 	}
 

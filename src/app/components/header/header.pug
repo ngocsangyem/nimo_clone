@@ -73,8 +73,58 @@ header.main-header
 								span Esports
 								svg.nav-icon.icon(fill='currentColor')
 									path(d='M16 2a2 2 0 012 2l-.001 1H21v4c0 1.047-1.028 2.3-3.083 3.757C17.541 14.425 15.903 15.84 13 17v2a1 1 0 001 1h1a1 1 0 010 2H9a1 1 0 010-2h1a1 1 0 001-1v-2c-2.903-1.161-4.541-2.575-4.917-4.241C4.028 11.299 3 10.047 3 9V5h2.999L6 4a2 2 0 012-2h8zm0 2H8l-.001 1H8v7.021l.004.086c.073.93 1.095 1.933 3.46 2.922l.535.217.258-.103c2.564-1.025 3.664-2.07 3.739-3.036L16 12V4zm3 3h-1v3.152l.18-.164.156-.152c.294-.294.493-.547.603-.745l.055-.1c.005-.007.006-.004.006.009V7zM5.999 7H5v2c0-.013.001-.016.006-.009l.055.1c.11.198.31.451.603.745l.157.152.178.163V7z' fill='currentColor' fill-rule='evenodd')
-			.header-search
 			.header-btn-group.flex-grow.flex-basis-0.min-width-0.justify-end
+				.header-search
+					.header-search-box
+						form.header-search-form(action="")
+							button.reset.search-btn(type="submit")
+								svg.icon.icon-search(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+									path(d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z')
+							input.reset.search-input(type="text")
+						.header-search-list
+							.search-suggest
+								ul.search-suggest-list
+									li.search-suggest-item
+										a.search-suggest-link(href="#", title="title")
+											span.suggest-order.is-hot 1
+											span MixiGaming
+									li.search-suggest-item
+										a.search-suggest-link(href="#", title="title")
+											span.suggest-order.is-hot 2
+											span TRỰC TIẾP GAME
+									li.search-suggest-item
+										a.search-suggest-link(href="#", title="title")
+											span.suggest-order.is-hot 3
+											span Thầy Giáo Ba
+									li.search-suggest-item
+										a.search-suggest-link(href="#", title="title")
+											span.suggest-order 4
+											span PGC 2021
+									li.search-suggest-item
+										a.search-suggest-link(href="#", title="title")
+											span.suggest-order 5
+											span Dev Nguyen
+									li.search-suggest-item
+										a.search-suggest-link(href="#", title="title")
+											span.suggest-order 6
+											span TUITÊNBÔ
+									li.search-suggest-item
+										a.search-suggest-link(href="#", title="title")
+											span.suggest-order 7
+											span Nhism
+									li.search-suggest-item
+										a.search-suggest-link(href="#", title="title")
+											span.suggest-order 8
+											span 500BROS FPS
+									li.search-suggest-item
+										a.search-suggest-link(href="#", title="title")
+											span.suggest-order 9
+											span Snake
+									li.search-suggest-item
+										a.search-suggest-link(href="#", title="title")
+											span.suggest-order 9
+											span Hải Under
+								.popover-arrow
 				a.header-btn.header-btn-search(href="/search" title="Open search page")
 					// https://icons.getbootstrap.com/
 					svg.icon.icon-search(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')

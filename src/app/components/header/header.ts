@@ -1,3 +1,4 @@
+import { debounce } from '@/helpers/debounce';
 import { createPopper } from '@popperjs/core';
 
 const settingPanel = document.querySelector('.setting-panel');
@@ -8,6 +9,34 @@ const panelContentItems = document.querySelectorAll(
 );
 const settingMask = document.querySelector('.setting-mask');
 const submenus = document.querySelectorAll('.has-submenu');
+
+const handleSearch = () => {
+	const headerSearchBox = document.querySelector('.header-search-box');
+	const searchInput = headerSearchBox?.querySelector('.search-input');
+	const searchForm = <HTMLElement>headerSearchBox?.querySelector('.header-search-form');
+	const headerSearchList = <HTMLElement>headerSearchBox?.querySelector('.header-search-list');
+	const popperInstance = createPopper(searchForm, headerSearchList, {
+		modifiers: [
+			{
+				name: 'offset',
+				options: {
+					offset: [0, 10],
+				},
+			},
+		],
+		placement: 'bottom',
+		strategy: 'fixed',
+	})
+
+	searchInput?.addEventListener('focus', () => {
+		headerSearchBox?.classList.add('is-focus');
+		headerSearchList.classList.add('is-active');
+	});
+	searchInput?.addEventListener('blur', () => {
+		headerSearchBox?.classList.remove('is-focus');
+		headerSearchList.classList.remove('is-active');
+	});
+}
 
 const toggleMobileHeader = () => {
 	const hamburgerBtn = document.querySelector('.header-hamburger');
@@ -162,7 +191,8 @@ const Header = () => {
 	openPanelContent();
 	handleSubmenu();
 	handleCountryOptionsDesktop();
-	toggleMobileHeader()
+	toggleMobileHeader();
+	handleSearch();
 };
 
 export { Header };

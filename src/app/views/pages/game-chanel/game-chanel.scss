@@ -1,11 +1,14 @@
-@use "@/styles/styles";
+// @use '@/styles/base'as *;
+// @use  '@/styles/all';
 
-@use '@/components/header/header';
-@use '@/components/footer/footer';
-@use '@/components/sidebar/sidebar';
-@use '@/components/game-content/game-content';
-@use '@/components/game-banner/game-banner';
-@use '@/components/no-data/no-data';
+// @use "@/styles/styles";
+
+// @use '@/components/header/header';
+// @use '@/components/footer/footer';
+// @use '@/components/sidebar/sidebar';
+// @use '@/components/game-content/game-content';
+// @use '@/components/game-banner/game-banner';
+// @use '@/components/no-data/no-data';
 
 .game-chanel-content {
 

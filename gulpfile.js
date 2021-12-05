@@ -15,9 +15,16 @@ task(
 	series([
 		'clean',
 		'compile:templates',
-		parallel('copy:css', 'compile:styles', 'compile:scripts', 'imagemin', 'copy:fonts'),
+		parallel(
+			'copy:css',
+			// 'compile:styles',
+			'compile:scripts:all',
+			'imagemin',
+			'copy:fonts',
+			'compile:styles:all'
+		),
 		'assets',
-		'inject',
+		// 'inject',
 		'watch',
 		'browserSync',
 	])
@@ -28,9 +35,16 @@ task(
 	series([
 		'clean',
 		'compile:templates',
-		parallel('copy:css', 'compile:styles', 'compile:scripts', 'imagemin', 'copy:fonts'),
+		parallel(
+			'copy:css',
+			// 'compile:styles',
+			'compile:scripts:all',
+			'imagemin',
+			'copy:fonts',
+			'compile:styles:all'
+		),
 		'assets',
-		'inject',
+		// 'inject',
 		'stat',
 		'sitemap',
 		'done',

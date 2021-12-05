@@ -1,13 +1,16 @@
-@use "@/styles/styles";
+// @use '@/styles/base'as *;
+// @use  '@/styles/all';
 
-@use '@/components/header/header';
-@use '@/components/footer/footer';
-@use '@/components/sidebar/sidebar';
-@use '@/components/game-content/game-content';
-@use '@/components/game-banner/game-banner';
-@use '@/components/custom-select/custom-select';
-@use '@/components/streamer-card/streamer-card';
-@use '@/components/filter-navigation/filter-navigation';
+// @use "@/styles/styles";
+
+// @use '@/components/header/header';
+// @use '@/components/footer/footer';
+// @use '@/components/sidebar/sidebar';
+// @use '@/components/game-content/game-content';
+// @use '@/components/game-banner/game-banner';
+// @use '@/components/custom-select/custom-select';
+// @use '@/components/streamer-card/streamer-card';
+// @use '@/components/filter-navigation/filter-navigation';
 
 body {
 	background-color: #f8f8f8;

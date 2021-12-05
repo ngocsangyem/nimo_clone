@@ -1,0 +1,37 @@
+// @use "@/styles/styles";
+@use 'base'with ($breakpoints: ('xs': 32rem, // ~512px
+		'sm': 48rem, // ~768px
+		'md': 64rem, // ~1024px
+		'lg': 80rem, // ~1280px
+		'xl': 90rem, // ~1440px
+		'xxl': 125rem, // ~2000px
+	),
+	$grid-columns: 12);
+
+
+@use './custom';
+
+@use '@/components/header/header';
+@use '@/components/footer/footer';
+@use '@/components/sidebar/sidebar';
+@use '@/components/game-content/game-content';
+@use '@/components/game-banner/game-banner';
+@use '@/components/no-data/no-data';
+@use '@/components/custom-select/custom-select';
+@use '@/components/streamer-card/streamer-card';
+@use '@/components/filter-navigation/filter-navigation';
+@use '@/components/game-card/game-card';
+@use '@/components/streaming-banner/streaming-banner';
+@use '@/components/game-heading/game-heading';
+@use '@/components/top-gane-card/top-gane-card';
+@use '@/components/top-game/top-game';
+@use '@/components/sport-events/sport-events';
+@use '@/components/streamer-group/streamer-group';
+@use '@/components/pro-team/pro-team';
+@use '@/components/streamer-intro/streamer-intro';
+
+@use '@/views/pages/game-chanel/game-chanel';
+@use '@/views/pages/game-detail/game-detail';
+@use '@/views/pages/games/games';
+@use '@/views/pages/index/index';
+@use '@/views/pages/lives/lives';

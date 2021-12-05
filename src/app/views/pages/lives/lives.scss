@@ -1,11 +1,14 @@
-@use "@/styles/styles";
+// @use '@/styles/base'as *;
+// @use "@/styles/styles";
 
-@use '@/components/header/header';
-@use '@/components/footer/footer';
-@use '@/components/sidebar/sidebar';
-@use '@/components/game-content/game-content';
-@use '@/components/custom-select/custom-select';
-@use '@/components/streamer-card/streamer-card';
+// @use '@/components/header/header';
+// @use '@/components/footer/footer';
+// @use '@/components/sidebar/sidebar';
+// @use '@/components/game-content/game-content';
+// @use '@/components/custom-select/custom-select';
+// @use '@/components/streamer-card/streamer-card';
+
+// @use  '@/styles/all';
 
 .game-live-content {
 	.game-content-title-primary {

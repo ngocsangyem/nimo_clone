@@ -1,16 +1,23 @@
-@use "@/styles/styles";
+// @use "@/styles/styles";
+// @use '@/styles/base'as *;
+// @use  '@/styles/all';
 
-@use '@/components/header/header';
-@use '@/components/streaming-banner/streaming-banner';
-@use '@/components/game-heading/game-heading';
-@use '@/components/top-game/top-game';
-@use '@/components/top-gane-card/top-gane-card';
-@use '@/components/sport-events/sport-events';
-@use '@/components/streamer-group/streamer-group';
-@use '@/components/streamer-card/streamer-card';
-@use '@/components/pro-team/pro-team';
-@use '@/components/footer/footer';
-@use '@/components/streamer-intro/streamer-intro';
+// @use '@/components/header/header';
+// @use '@/components/streaming-banner/streaming-banner';
+// @use '@/components/game-heading/game-heading';
+// @use '@/components/top-game/top-game';
+// @use '@/components/top-gane-card/top-gane-card';
+// @use '@/components/sport-events/sport-events';
+// @use '@/components/streamer-group/streamer-group';
+// @use '@/components/streamer-card/streamer-card';
+// @use '@/components/pro-team/pro-team';
+// @use '@/components/footer/footer';
+// @use '@/components/streamer-intro/streamer-intro';
+
+// @use '../game-chanel/game-chanel.scss';
+// @use '../game-detail/game-detail.scss';
+// @use '../games/games.scss';
+// @use '../lives/lives.scss';
 
 body {
 	background-color: #f8f8f8;

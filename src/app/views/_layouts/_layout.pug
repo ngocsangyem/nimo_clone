@@ -19,10 +19,12 @@ html(dir='ltr', lang=SEO.seo_lang, itemscope, itemtype="http://schema.org/WebSit
 		include ./includes/_css
 		<!-- GFRONT:styles -->
 		title #{title} | #{SEO.cfg_name}
+		link(href="./styles/all.css", rel="stylesheet")
 	body(class=process.argv.slice(3).indexOf('--production') < 0 ? workName + 'develop '+prefix+bodyClass+'-page' : prefix+bodyClass+'-page' || 'default')
 		<!-- GFRONT:symbol -->
 		include @/components/header/header
 		main
 			block main
 		block footer
+		script(src="./scripts/app.js")
 		<!-- GFRONT:scripts -->

@@ -47,7 +47,7 @@ const cleaningHTML = async (file) => {
 const watchChanges = (done) => {
 	if (isDev) {
 		// Styles
-		watch([paths.app('**', '*.s+(a|c)ss')], series('compile:styles'));
+		watch([paths.app('**', '*.s+(a|c)ss')], series('compile:styles:all'));
 
 		// Templates
 		watch(

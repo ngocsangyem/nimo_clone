@@ -15,7 +15,7 @@ const toggleSidebar = () => {
 		sidebarInner?.classList.toggle('is-active');
 	})
 
-	if (isMobileOnly) {
+	if (isMobileOnly && sidebarArrow) {
 		sidebarArrow.style.display = "none";
 	}
 };

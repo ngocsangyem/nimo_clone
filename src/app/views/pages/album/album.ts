@@ -1,11 +1,12 @@
 import { Header } from '@/components/header/header';
-import { SideBar } from '@/components/sidebar/sidebar';
+import { StreamerGallery } from '@/components/streamer-gallery/streamer-gallery';
 
 
 
 export class AlbumComponent {
 	constructor() {
 		Header();
+		StreamerGallery();
 	}
 
 	static init() {

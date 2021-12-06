@@ -1,0 +1,12 @@
+section.streamer-gallery
+	.streamer-gallery-list
+		article.gallery-item
+			include @/components/streamer-profile-box/streamer-profile-box.pug
+		- for (var i=1; i<41; i++)
+			article.gallery-item
+				.gallery-item-inner
+					figure
+						a(data-fancybox="streamer-gallery" href="#", title="title" data-src=`./images/gallery/gallery-${i}.jpeg`)
+							img(src=`./images/gallery/gallery-${i}.jpeg`, alt="alt")
+	include @/components/streamer-intro/streamer-intro
+	

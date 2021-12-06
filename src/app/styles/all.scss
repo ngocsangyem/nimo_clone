@@ -29,6 +29,7 @@
 @use '@/components/streamer-group/streamer-group';
 @use '@/components/pro-team/pro-team';
 @use '@/components/streamer-intro/streamer-intro';
+@use '@/components/streamer-profile-box/streamer-profile-box';
 @use '@/components/streamer-gallery/streamer-gallery';
 
 @use '@/views/pages/game-chanel/game-chanel';
@@ -37,3 +38,7 @@
 @use '@/views/pages/index/index';
 @use '@/views/pages/lives/lives';
 @use '@/views/pages/album/album';
+
+body {
+	background-color: #f8f8f8;
+}

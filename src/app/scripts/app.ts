@@ -5,6 +5,7 @@ import { ProTeam } from '@/components/pro-team/pro-team';
 import { SportEvents } from '@/components/sport-events/sport-events';
 import { StreamingBanner } from '@/components/streaming-banner/streaming-banner';
 import { TopGames } from '@/components/top-game/top-game';
+import { StreamerGallery } from '@/components/streamer-gallery/streamer-gallery';
 
 
 
@@ -18,6 +19,7 @@ export class App {
 		TopGames();
 		SportEvents();
 		ProTeam();
+		StreamerGallery();
 	}
 
 	handleCustomSelect() {

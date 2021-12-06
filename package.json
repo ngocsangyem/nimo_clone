@@ -41,6 +41,7 @@
 		"@babel/plugin-proposal-class-properties": "^7.16.0",
 		"@babel/preset-env": "^7.16.4",
 		"@babel/register": "^7.16.0",
+		"@types/imagesloaded": "^4.1.2",
 		"@types/masonry-layout": "^4.2.4",
 		"ansi-colors": "^4.1.1",
 		"autoprefixer": "^10.4.0",
@@ -111,7 +112,9 @@
 		"webpack-stream": "^7.0.0"
 	},
 	"dependencies": {
+		"@fancyapps/ui": "^4.0.11",
 		"@popperjs/core": "^2.11.0",
+		"imagesloaded": "^4.1.4",
 		"infinite-scroll": "^4.0.1",
 		"masonry-layout": "^4.2.2",
 		"mobile-device-detect": "^0.4.3",

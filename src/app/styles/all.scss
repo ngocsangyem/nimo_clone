@@ -23,15 +23,17 @@
 @use '@/components/game-card/game-card';
 @use '@/components/streaming-banner/streaming-banner';
 @use '@/components/game-heading/game-heading';
-@use '@/components/top-gane-card/top-gane-card';
+@use '@/components/top-game-card/top-game-card';
 @use '@/components/top-game/top-game';
 @use '@/components/sport-events/sport-events';
 @use '@/components/streamer-group/streamer-group';
 @use '@/components/pro-team/pro-team';
 @use '@/components/streamer-intro/streamer-intro';
+@use '@/components/streamer-gallery/streamer-gallery';
 
 @use '@/views/pages/game-chanel/game-chanel';
 @use '@/views/pages/game-detail/game-detail';
 @use '@/views/pages/games/games';
 @use '@/views/pages/index/index';
 @use '@/views/pages/lives/lives';
+@use '@/views/pages/album/album';

@@ -41,6 +41,7 @@
 		"@babel/plugin-proposal-class-properties": "^7.16.0",
 		"@babel/preset-env": "^7.16.4",
 		"@babel/register": "^7.16.0",
+		"@types/masonry-layout": "^4.2.4",
 		"ansi-colors": "^4.1.1",
 		"autoprefixer": "^10.4.0",
 		"awesome-typescript-loader": "^5.2.1",
@@ -111,6 +112,8 @@
 	},
 	"dependencies": {
 		"@popperjs/core": "^2.11.0",
+		"infinite-scroll": "^4.0.1",
+		"masonry-layout": "^4.2.2",
 		"mobile-device-detect": "^0.4.3",
 		"swiper": "^7.3.0"
 	}

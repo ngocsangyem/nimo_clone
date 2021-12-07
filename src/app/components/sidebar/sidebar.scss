@@ -122,16 +122,15 @@
 		height: calc(100vh - 370px);
 		overflow-y: auto;
 		scrollbar-width: thin;
+
 		&::-webkit-scrollbar {
 			height: 8px;
 			width: 8px;
 		}
+
 		&::-webkit-scrollbar-thumb {
-			background-color: #dcdcdc;
+			background-color: #323232;
 			border-radius: 8px;
-		}
-		@media (orientation: landscape) {
-			height: 100vh;
 		}
 	}
 
@@ -200,9 +199,6 @@
 		padding: 14px;
 		position: absolute;
 		width: 100%;
-		@media (orientation: landscape) {
-			display: none;
-		}
 	}
 
 	.sidebar-bottom-download {
@@ -365,6 +361,7 @@
 		.sidebar-container {
 			width: 52px;
 		}
+
 		.sidebar-inner {
 			transform: translateX(-168px);
 		}
@@ -374,6 +371,19 @@
 			visibility: hidden;
 		}
 	}
+
+	@media (orientation: landscape) {
+		&.is-mobile {
+			.sidebar-card-bottom {
+				display: none;
+			}
+
+			.sidebar-scrolling {
+				height: 100vh;
+			}
+		}
+	}
+
 
 	@include breakpoint(sm) {
 		display: block;

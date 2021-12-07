@@ -16,6 +16,7 @@ const toggleSidebar = () => {
 	})
 
 	if (isMobileOnly && sidebarArrow) {
+		sidebar?.classList.add('is-mobile');
 		sidebarArrow.style.display = "none";
 	}
 };

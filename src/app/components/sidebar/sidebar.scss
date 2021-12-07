@@ -121,6 +121,15 @@
 	.sidebar-scrolling {
 		height: calc(100vh - 370px);
 		overflow-y: auto;
+		scrollbar-width: thin;
+		&::-webkit-scrollbar {
+			height: 8px;
+			width: 8px;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: #dcdcdc;
+			border-radius: 8px;
+		}
 		@media (orientation: landscape) {
 			height: 100vh;
 		}

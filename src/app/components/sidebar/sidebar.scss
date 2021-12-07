@@ -3,7 +3,7 @@
 .sidebar {
 	color: hsla(0, 0%, 100%, .6);
 	position: relative;
-	z-index: 10;
+	z-index: 21;
 
 	a {
 		text-decoration: none;
@@ -399,8 +399,8 @@
 		}
 
 		.sidebar-inner {
-			width: 50px;
-			transform: translateX(-50px);
+			width: 220px;
+			transform: translateX(-220px);
 
 			&.is-active {
 				transform: translateX(0);
@@ -408,13 +408,13 @@
 		}
 
 		.sidebar-expand {
-			opacity: 0;
-			visibility: hidden;
+			opacity: 1;
+			visibility: visible;
 		}
 
 		.sidebar-collapse {
-			opacity: 1;
-			visibility: visible;
+			opacity: 0;
+			visibility: hidden;
 		}
 	}
 }

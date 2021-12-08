@@ -113,7 +113,7 @@ const handleCountryOptionsDesktop = () => {
 		strategy: 'fixed',
 	});
 
-	triggerBtn.addEventListener('click', () => {
+	triggerBtn?.addEventListener('click', () => {
 		if (!optionsList.hasAttribute('show-popper')) {
 			optionsList.setAttribute('show-popper', '');
 		} else {

@@ -172,11 +172,11 @@ const handleSubmenu = () => {
 		const hideEvents = ['mouseleave', 'blur'];
 
 		showEvents.forEach((event) => {
-			submenu.addEventListener(event, show);
+			submenu?.addEventListener(event, show);
 		});
 
 		hideEvents.forEach((event) => {
-			submenu.addEventListener(event, hide);
+			submenu?.addEventListener(event, hide);
 		});
 	});
 };

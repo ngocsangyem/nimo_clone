@@ -21,9 +21,9 @@ const handleSlides = () => {
 				spaceBetween: 30,
 			},
 		},
-		loop: true
+		loop: true,
 	});
-}
+};
 
 const ProTeam = () => {
 	handleSlides();

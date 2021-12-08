@@ -4,9 +4,9 @@ const navItems = document.querySelectorAll(
 
 const handleTab = () => {
 	Array.from(navItems).forEach((navItem) => {
-		navItem.addEventListener('click', () => {
+		navItem?.addEventListener('click', () => {
 			Array.from(navItems).forEach((item) =>
-				item.classList.remove('is-active')
+				item?.classList.remove('is-active')
 			);
 			navItem.classList.add('is-active');
 		});

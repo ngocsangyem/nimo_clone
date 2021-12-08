@@ -12,14 +12,18 @@ import { StreamerGallery } from '@/components/streamer-gallery/streamer-gallery'
 export class App {
 	formCustomSelect!: FormItemSelect;
 	constructor() {
-		Header();
-		SideBar();
-		this.handleCustomSelect();
-		StreamingBanner();
-		TopGames();
-		SportEvents();
-		ProTeam();
-		StreamerGallery();
+		try {
+			Header();
+			SideBar();
+			this.handleCustomSelect();
+			StreamingBanner();
+			TopGames();
+			SportEvents();
+			ProTeam();
+			StreamerGallery();
+		} catch (error) {
+			console.log(error);
+		}
 	}
 
 	handleCustomSelect() {

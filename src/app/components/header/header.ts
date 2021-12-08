@@ -15,8 +15,6 @@ const handleSearch = () => {
 	const searchInput = <HTMLInputElement>headerSearchBox?.querySelector('.search-input');
 	const searchForm = <HTMLElement>headerSearchBox?.querySelector('.header-search-form');
 	const headerSearchList = <HTMLElement>headerSearchBox?.querySelector('.header-search-list');
-	const searchSuggest = headerSearchBox?.querySelector('.search-suggest');
-	const searchResult = headerSearchBox?.querySelector('.search-result');
 	const popperInstance = createPopper(searchForm, headerSearchList, {
 		modifiers: [
 			{
@@ -32,20 +30,20 @@ const handleSearch = () => {
 
 	searchInput?.addEventListener('focus', () => {
 		headerSearchBox?.classList.add('is-focus');
-		headerSearchList.classList.add('is-active');
+		headerSearchList?.classList.add('is-active');
 	});
 	searchInput?.addEventListener('blur', () => {
 		headerSearchBox?.classList.remove('is-focus');
-		headerSearchList.classList.remove('is-active');
+		headerSearchList?.classList.remove('is-active');
 	});
 
 	const onInput = () => {
-		if (searchInput.value) {
+		if (searchInput?.value) {
 			popperInstance.update();
-			headerSearchList.classList.add('show-result');
+			headerSearchList?.classList.add('show-result');
 		} else {
 			popperInstance.update();
-			headerSearchList.classList.remove('show-result');
+			headerSearchList?.classList.remove('show-result');
 		}
 	}
 
@@ -86,7 +84,7 @@ const toggleSettingPanel = () => {
 
 const closePanelList = () => {
 	if (!panelList?.classList.contains('is-hidden')) {
-		panelList?.classList.add('is-hidden');
+		panelList.classList.add('is-hidden');
 	}
 };
 
@@ -114,10 +112,10 @@ const handleCountryOptionsDesktop = () => {
 	});
 
 	triggerBtn?.addEventListener('click', () => {
-		if (!optionsList.hasAttribute('show-popper')) {
-			optionsList.setAttribute('show-popper', '');
+		if (!optionsList?.hasAttribute('show-popper')) {
+			optionsList?.setAttribute('show-popper', '');
 		} else {
-			optionsList.removeAttribute('show-popper');
+			optionsList?.removeAttribute('show-popper');
 		}
 	})
 }
@@ -183,10 +181,10 @@ const handleSubmenu = () => {
 
 const openPanelContent = () => {
 	Array.from(panelContentItems).forEach((panel) => {
-		const panelButton = document.querySelector(
+		const panelButton = document?.querySelector(
 			`.panel-item[data-panel='${panel.getAttribute('data-panel')}']`
 		);
-		const panelTrigger = panel.querySelector('.panel-trigger');
+		const panelTrigger = panel?.querySelector('.panel-trigger');
 
 		panelButton?.addEventListener('click', () => {
 			closePanelList();
